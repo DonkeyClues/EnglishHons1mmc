@@ -1,2 +1,121 @@
-<img src="1757996492101.jpg"> 
- <img src="1754827251084.jpg"> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time and Routines Chambers</title>
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            transition: background-color 1s ease-in-out;
+        }
+
+        .chamber-wrapper {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #timeChamber {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 5px solid #00f0ff;
+            box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff;
+            cursor: pointer;
+            animation: rotate 10s linear infinite, scaleUp 20s ease-in-out infinite alternate;
+        }
+
+        .chamber-text {
+            font-size: 2em;
+            font-weight: bold;
+            color: #00f0ff;
+            text-shadow: 0 0 10px #00f0ff;
+            margin-top: 20px;
+        }
+
+        .emoji {
+            font-size: 1.2em;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        #routinesChamber {
+            display: none;
+            width: 100vw;
+            height: auto;
+            max-width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        /* Animations */
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes scaleUp {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chamber-wrapper">
+        <img id="timeChamber" src="1757996492101.jpg" alt="Time Dilation Chamber">
+        <h1 class="chamber-text">
+            <span class="emoji">⏳</span> Time Dilation Chamber <span class="emoji">⏳</span>
+        </h1>
+    </div>
+
+    <img id="routinesChamber" src="1754827251084.jpg" alt="Routines Chamber">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const timeChamber = document.getElementById('timeChamber');
+            const routinesChamber = document.getElementById('routinesChamber');
+            const chamberWrapper = document.querySelector('.chamber-wrapper');
+            const body = document.body;
+
+            timeChamber.addEventListener('click', () => {
+                chamberWrapper.style.display = 'none';
+                routinesChamber.style.display = 'block';
+                body.style.backgroundColor = '#1a1a2e';
+            });
+        });
+    </script>
+
+</body>
+ </html>and 
